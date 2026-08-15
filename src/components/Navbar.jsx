@@ -140,7 +140,7 @@ export default function Navbar({ onOpenConsultation }) {
 
         {/* Mobile Navigation Drawer */}
         {mobileMenuOpen && (
-          <div className="xl:hidden bg-[#060D1D] border-b border-cyan-500/20 px-4 pt-4 pb-6 space-y-2 animate-fadeIn">
+          <div className="xl:hidden bg-[#060D1D] border-b border-cyan-500/20 px-4 pt-4 pb-6 space-y-2 animate-fadeIn max-h-[85vh] overflow-y-auto">
             <div className="grid grid-cols-2 gap-2 mb-4">
               {navLinks.map((link) => (
                 <a

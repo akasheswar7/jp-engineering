@@ -22,7 +22,7 @@ export default function ConsultationModal({ isOpen, onClose, initialCategory = '
 
   return (
     <div className="fixed inset-0 z-50 bg-black/80 backdrop-blur-md flex items-center justify-center p-4">
-      <div className="bg-[#060D1D] border border-cyan-500/40 rounded-2xl max-w-lg w-full p-6 sm:p-8 space-y-6 tech-border shadow-2xl animate-fadeIn relative">
+      <div className="bg-[#060D1D] border border-cyan-500/40 rounded-2xl max-w-lg w-full p-5 sm:p-8 space-y-6 tech-border shadow-2xl animate-fadeIn relative max-h-[90vh] overflow-y-auto">
         
         {/* Close Button */}
         <button
