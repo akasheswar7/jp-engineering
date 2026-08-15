@@ -83,142 +83,151 @@ export default function Hero({ onOpenConsultation }) {
   }, []);
 
   return (
-    <section id="hero" className="relative min-h-[92vh] flex items-center justify-center overflow-hidden bg-blueprint">
-      {/* Dynamic Background Canvas */}
-      <canvas ref={canvasRef} className="absolute inset-0 w-full h-full pointer-events-none opacity-80" />
+    <section id="hero" className="relative min-h-[90vh] flex items-center justify-center overflow-hidden bg-[#030712]">
+      {/* Background Canvas Effect */}
+      <canvas ref={canvasRef} className="absolute inset-0 w-full h-full pointer-events-none opacity-40" />
 
-      {/* Radial Gradient Ambient Lighting */}
-      <div className="absolute top-1/4 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-cyan-500/10 rounded-full blur-[140px] pointer-events-none"></div>
-      <div className="absolute bottom-10 right-10 w-[400px] h-[400px] bg-blue-600/10 rounded-full blur-[120px] pointer-events-none"></div>
+      {/* Radial Gradient Glow Highlights */}
+      <div className="absolute top-1/3 left-1/4 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[500px] bg-cyan-500/10 rounded-full blur-[140px] pointer-events-none"></div>
+      <div className="absolute bottom-10 right-10 w-[450px] h-[450px] bg-blue-600/10 rounded-full blur-[130px] pointer-events-none"></div>
 
-      {/* Blueprint Fine Overlay Lines */}
-      <div className="absolute inset-0 bg-blueprint-fine pointer-events-none opacity-40"></div>
-
-      <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 lg:py-28">
+      <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 lg:py-24">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
           
-          {/* Main Hero Content */}
-          <div className="lg:col-span-8 space-y-8">
+          {/* Main Content Column */}
+          <div className="lg:col-span-7 space-y-7">
             
-            {/* Location & Brand Eyebrow */}
-            <div className="inline-flex items-center gap-3 px-3.5 py-1.5 rounded-full bg-cyan-950/80 border border-cyan-500/30 text-cyan-300 text-xs font-mono tracking-widest uppercase">
-              <span className="w-2 h-2 rounded-full bg-cyan-400 animate-pulse"></span>
-              <span className="font-bold text-white tracking-widest">JP ENGINEERING</span>
-              <span className="text-cyan-600">•</span>
-              <span className="flex items-center gap-1 text-slate-300">
-                <MapPin className="w-3 h-3 text-cyan-400" />
-                VISAKHAPATNAM • ANDHRA PRADESH
+            {/* Top Badge: Brands & Location */}
+            <div className="inline-flex items-center gap-2.5 px-4 py-2 rounded-full bg-slate-900/90 border border-cyan-500/30 backdrop-blur-md text-xs font-medium text-slate-200 shadow-lg">
+              <span className="flex items-center gap-1.5 text-cyan-400 font-semibold">
+                <MapPin className="w-3.5 h-3.5" /> Visakhapatnam, AP
               </span>
+              <span className="text-slate-600">•</span>
+              <span className="text-slate-300">Air Conditioning & HVAC Supplier</span>
             </div>
 
             {/* Main Headline */}
-            <h1 className="font-display text-4xl sm:text-6xl lg:text-7xl font-extrabold tracking-tight text-white leading-[1.08]">
-              ENGINEERING THE <br />
-              <span className="text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 via-sky-300 to-blue-500 cyan-text-glow">
-                PERFECT CLIMATE.
+            <h1 className="font-sans text-4xl sm:text-6xl font-extrabold tracking-tight text-white leading-[1.12]">
+              Precision Air Conditioning <br />
+              <span className="text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 via-sky-300 to-blue-400">
+                & Integrated HVAC Solutions.
               </span>
             </h1>
 
-            {/* Supporting Subtext */}
-            <p className="text-lg sm:text-xl text-slate-300 max-w-2xl font-normal leading-relaxed">
-              {companyInfo.subTagline}
+            {/* Description */}
+            <p className="text-base sm:text-lg text-slate-300 max-w-xl font-normal leading-relaxed">
+              JP Engineering supplies high-performance cooling systems engineered for residential, commercial, and industrial spaces in Visakhapatnam.
             </p>
 
-            {/* Primary & Secondary CTAs */}
-            <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-4 pt-2">
+            {/* Brand Badges Bar */}
+            <div className="flex flex-wrap items-center gap-3 pt-1">
+              <span className="text-xs font-semibold text-slate-400 uppercase tracking-wider">Authorized Dealer In:</span>
+              <div className="flex items-center gap-2">
+                <span className="px-3 py-1 rounded bg-[#0096E6]/15 border border-[#0096E6]/40 text-[#38BDF8] text-xs font-bold tracking-wider">
+                  DAIKIN
+                </span>
+                <span className="px-3 py-1 rounded bg-[#A50034]/15 border border-[#A50034]/40 text-[#F43F5E] text-xs font-bold tracking-wider">
+                  LG
+                </span>
+                <span className="px-3 py-1 rounded bg-[#E60012]/15 border border-[#E60012]/40 text-[#FB7185] text-xs font-bold tracking-wider">
+                  HITACHI
+                </span>
+              </div>
+            </div>
+
+            {/* Primary & Secondary Action CTAs */}
+            <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-4 pt-4">
               <button
                 onClick={onOpenConsultation}
-                className="group relative overflow-hidden px-8 py-4 bg-cyan-400 text-slate-950 text-xs sm:text-sm font-bold tracking-widest uppercase rounded-lg shadow-xl shadow-cyan-500/25 hover:shadow-cyan-400/40 hover:bg-cyan-300 transition-all flex items-center justify-center gap-3 active:scale-95"
+                className="group px-7 py-3.5 bg-cyan-400 hover:bg-cyan-300 text-slate-950 text-sm font-bold tracking-wide rounded-lg shadow-xl shadow-cyan-500/20 transition-all flex items-center justify-center gap-2.5 active:scale-95"
               >
-                <span>REQUEST A CONSULTATION</span>
+                <span>REQUEST FREE CONSULTATION</span>
                 <ChevronRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
               </button>
 
               <a
-                href="#solutions"
-                className="px-8 py-4 bg-slate-900/80 hover:bg-slate-800 border border-white/15 hover:border-cyan-500/50 text-slate-200 text-xs sm:text-sm font-bold tracking-widest uppercase rounded-lg transition-all flex items-center justify-center gap-2"
+                href="#calculator"
+                className="px-7 py-3.5 bg-slate-900/90 hover:bg-slate-800 border border-white/10 hover:border-cyan-500/40 text-slate-200 text-sm font-semibold rounded-lg transition-all flex items-center justify-center gap-2"
               >
-                <span>EXPLORE SOLUTIONS</span>
+                <span>AC TONNAGE CALCULATOR</span>
                 <ArrowDownRight className="w-4 h-4 text-cyan-400" />
               </a>
             </div>
 
-            {/* Quick Metadata Spec Bar */}
-            <div className="pt-8 border-t border-white/10 grid grid-cols-3 gap-4 font-mono text-xs text-slate-400">
+            {/* Quick Proof Metrics */}
+            <div className="pt-6 border-t border-white/10 grid grid-cols-3 gap-4 text-xs text-slate-300">
               <div>
-                <span className="block text-slate-400 text-[10px] uppercase">RATING</span>
-                <span className="text-white font-bold text-sm sm:text-base flex items-center gap-1">
-                  ★ 4.9 <span className="text-slate-400 font-normal text-xs">(8 Reviews)</span>
+                <span className="block text-slate-400 text-[11px] mb-0.5">Google Rating</span>
+                <span className="text-white font-bold text-base flex items-center gap-1">
+                  ★ 4.9 <span className="text-slate-400 text-xs font-normal">(8 Reviews)</span>
                 </span>
               </div>
               <div>
-                <span className="block text-slate-400 text-[10px] uppercase">SPECIALIZATION</span>
-                <span className="text-white font-bold text-sm sm:text-base">HVAC Systems</span>
+                <span className="block text-slate-400 text-[11px] mb-0.5">Key Brands</span>
+                <span className="text-white font-bold text-sm sm:text-base">Daikin • LG • Hitachi</span>
               </div>
               <div>
-                <span className="block text-slate-400 text-[10px] uppercase">REGION</span>
+                <span className="block text-slate-400 text-[11px] mb-0.5">Location</span>
                 <span className="text-white font-bold text-sm sm:text-base">Visakhapatnam, AP</span>
               </div>
             </div>
 
           </div>
 
-          {/* Hero Visual Card / Engineering HUD Card */}
-          <div className="lg:col-span-4 relative">
-            <div className="relative rounded-2xl glass-panel-cyan p-6 sm:p-8 space-y-6 tech-border shadow-2xl">
+          {/* Right Visual Column: Corporate HVAC Card */}
+          <div className="lg:col-span-5 relative">
+            <div className="relative rounded-2xl bg-slate-900/90 border border-cyan-500/30 p-6 sm:p-7 space-y-6 shadow-2xl backdrop-blur-xl">
               
               {/* Card Header */}
               <div className="flex items-center justify-between border-b border-white/10 pb-4">
-                <div className="flex items-center gap-2">
-                  <Wind className="w-5 h-5 text-cyan-400 animate-spin" style={{ animationDuration: '10s' }} />
-                  <span className="font-mono text-xs text-cyan-300 font-semibold tracking-wider">
-                    CLIMATE PRECISION HUD
-                  </span>
+                <div className="flex items-center gap-2.5">
+                  <div className="w-8 h-8 rounded-lg bg-cyan-500/20 border border-cyan-400/30 flex items-center justify-center">
+                    <Wind className="w-4 h-4 text-cyan-400" />
+                  </div>
+                  <div>
+                    <h3 className="text-sm font-bold text-white">JP ENGINEERING</h3>
+                    <p className="text-[11px] text-slate-400">Visakhapatnam HVAC Headquarters</p>
+                  </div>
                 </div>
-                <span className="text-[10px] font-mono bg-cyan-950 text-cyan-400 px-2 py-0.5 rounded border border-cyan-500/30">
-                  LIVE STATUS
+                <span className="px-2.5 py-1 rounded bg-cyan-950 text-cyan-300 border border-cyan-500/30 text-[10px] font-semibold tracking-wider uppercase">
+                  VERIFIED DEALER
                 </span>
               </div>
 
-              {/* Climate Metric Controls Visual */}
-              <div className="space-y-4 font-mono">
-                
-                {/* Temperature Dynamic Indicator */}
-                <div className="bg-slate-950/80 p-4 rounded-xl border border-white/5 space-y-2">
-                  <div className="flex justify-between text-xs text-slate-400">
-                    <span>TARGET TEMP CONTROL</span>
-                    <span className="text-cyan-400 font-bold">22.5°C OPTIMAL</span>
-                  </div>
-                  <div className="w-full bg-slate-800 h-2 rounded-full overflow-hidden">
-                    <div className="bg-gradient-to-r from-cyan-500 to-blue-500 h-full w-[75%] rounded-full animate-pulse"></div>
-                  </div>
+              {/* Showcase Image */}
+              <div className="relative h-48 rounded-xl overflow-hidden border border-white/10 group">
+                <img
+                  src="https://images.unsplash.com/photo-1621905251189-08b45d6a269e?auto=format&fit=crop&w=800&q=80"
+                  alt="Modern HVAC Installation Visakhapatnam"
+                  className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 opacity-90"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-slate-950 via-transparent to-transparent"></div>
+                <div className="absolute bottom-3 left-3 right-3 flex items-center justify-between text-xs text-slate-200">
+                  <span className="font-semibold text-white">Commercial & Residential Systems</span>
+                  <span className="text-cyan-400 font-bold">100% Genuine</span>
                 </div>
-
-                {/* Airflow Velocity Gauge */}
-                <div className="bg-slate-950/80 p-4 rounded-xl border border-white/5 space-y-2">
-                  <div className="flex justify-between text-xs text-slate-400">
-                    <span>AIRFLOW VELOCITY</span>
-                    <span className="text-cyan-400 font-bold">450 CFM / ZONE</span>
-                  </div>
-                  <div className="w-full bg-slate-800 h-2 rounded-full overflow-hidden">
-                    <div className="bg-gradient-to-r from-blue-500 to-cyan-400 h-full w-[88%] rounded-full"></div>
-                  </div>
-                </div>
-
-                {/* Efficiency Index */}
-                <div className="bg-slate-950/80 p-4 rounded-xl border border-white/5 flex items-center justify-between text-xs">
-                  <span className="text-slate-400">ENERGY EFFICIENCY</span>
-                  <span className="px-2.5 py-1 bg-cyan-500/20 text-cyan-300 rounded border border-cyan-500/30 font-bold">
-                    HIGH INVERTER RATIO
-                  </span>
-                </div>
-
               </div>
 
-              {/* Card Footer Trust Note */}
-              <div className="pt-2 flex items-center gap-3 text-xs text-slate-300 border-t border-white/10">
+              {/* Specification Highlights */}
+              <div className="space-y-2.5 text-xs">
+                <div className="p-3 rounded-lg bg-slate-950 border border-white/5 flex items-center justify-between">
+                  <span className="text-slate-400">Supported System Types</span>
+                  <span className="text-white font-semibold">Split, Multi-Split, VRV/VRF</span>
+                </div>
+                <div className="p-3 rounded-lg bg-slate-950 border border-white/5 flex items-center justify-between">
+                  <span className="text-slate-400">Cooling Tonnage Range</span>
+                  <span className="text-cyan-400 font-bold">1.0 TR — 50+ TR</span>
+                </div>
+                <div className="p-3 rounded-lg bg-slate-950 border border-white/5 flex items-center justify-between">
+                  <span className="text-slate-400">Warranty Coverage</span>
+                  <span className="text-white font-semibold">Official Manufacturer Warranty</span>
+                </div>
+              </div>
+
+              {/* Card Footer */}
+              <div className="pt-2 flex items-center gap-2.5 text-xs text-slate-300 border-t border-white/10">
                 <Shield className="w-4 h-4 text-cyan-400 shrink-0" />
-                <span>Selected for spatial load, silence & long-term durability.</span>
+                <span>Tailored thermal calculations & energy-efficient selection.</span>
               </div>
 
             </div>

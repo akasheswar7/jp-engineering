@@ -34,28 +34,30 @@ export default function Navbar({ onOpenConsultation }) {
   return (
     <>
       {/* Top Engineering Micro-Bar */}
-      <div className="bg-[#030712] border-b border-white/5 py-1.5 px-4 text-xs font-mono text-slate-400 hidden sm:block">
+      <div className="bg-[#02050D] border-b border-white/5 py-2 px-4 text-xs font-sans text-slate-300 hidden sm:block">
         <div className="max-w-7xl mx-auto flex justify-between items-center">
-          <div className="flex items-center space-x-6">
-            <span className="flex items-center gap-1.5 text-cyan-400">
-              <span className="w-1.5 h-1.5 rounded-full bg-cyan-400 animate-ping"></span>
-              LOCATION: {companyInfo.coordinates} • VISAKHAPATNAM
+          <div className="flex items-center space-x-4">
+            <span className="flex items-center gap-1.5 text-cyan-400 font-medium">
+              <MapPin className="w-3.5 h-3.5" />
+              Visakhapatnam, Andhra Pradesh
             </span>
-            <span className="text-slate-500">|</span>
-            <span className="text-slate-300 flex items-center gap-1">
-              <ShieldCheck className="w-3.5 h-3.5 text-cyan-400" />
-              PRECISION HVAC SUPPLIER
-            </span>
+            <span className="text-slate-600">|</span>
+            <div className="flex items-center gap-2">
+              <span className="text-slate-400 text-[11px]">Dealer In:</span>
+              <span className="bg-[#0096E6]/20 border border-[#0096E6]/40 text-[#38BDF8] text-[10px] px-1.5 py-0.5 rounded font-bold">DAIKIN</span>
+              <span className="bg-[#A50034]/20 border border-[#A50034]/40 text-[#F43F5E] text-[10px] px-1.5 py-0.5 rounded font-bold">LG</span>
+              <span className="bg-[#E60012]/20 border border-[#E60012]/40 text-[#FB7185] text-[10px] px-1.5 py-0.5 rounded font-bold">HITACHI</span>
+            </div>
           </div>
-          <div className="flex items-center space-x-6">
+          <div className="flex items-center space-x-5">
             <a 
               href={`tel:${companyInfo.phoneRaw}`} 
-              className="hover:text-cyan-400 transition-colors flex items-center gap-1.5 text-slate-200"
+              className="hover:text-cyan-400 transition-colors flex items-center gap-1.5 text-slate-200 font-semibold"
             >
               <Phone className="w-3.5 h-3.5 text-cyan-400" />
               {companyInfo.phone}
             </a>
-            <span className="bg-cyan-950/80 border border-cyan-500/30 text-cyan-300 text-[10px] px-2 py-0.5 rounded font-semibold tracking-wider">
+            <span className="bg-cyan-950/90 border border-cyan-500/40 text-cyan-300 text-[11px] px-2.5 py-0.5 rounded font-bold tracking-wide">
               ★ 4.9 GOOGLE RATED
             </span>
           </div>
@@ -79,12 +81,12 @@ export default function Navbar({ onOpenConsultation }) {
             </div>
             <div>
               <div className="flex items-center gap-1.5">
-                <span className="font-display text-lg sm:text-xl font-extrabold tracking-wider text-white">
+                <span className="font-sans text-lg sm:text-xl font-extrabold tracking-tight text-white">
                   JP <span className="text-cyan-400">ENGINEERING</span>
                 </span>
               </div>
-              <p className="text-[9px] font-mono tracking-widest text-slate-400 uppercase -mt-0.5">
-                Precision HVAC Solutions
+              <p className="text-[10px] font-sans tracking-wide text-slate-400 font-medium -mt-0.5">
+                Air Conditioning & HVAC Solutions
               </p>
             </div>
           </a>
