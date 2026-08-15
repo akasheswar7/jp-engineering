@@ -1,0 +1,37 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" width="100%" height="100%">
+  <defs>
+    <linearGradient id="bgGrad2" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#070F1E"/>
+      <stop offset="100%" stop-color="#0F2B48"/>
+    </linearGradient>
+    <linearGradient id="hitachiGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#E60012"/>
+      <stop offset="100%" stop-color="#FF3344"/>
+    </linearGradient>
+  </defs>
+
+  <rect width="100%" height="100%" fill="url(#bgGrad2)"/>
+
+  <!-- Industrial VRF Outdoor Unit -->
+  <rect x="220" y="100" width="360" height="240" rx="12" fill="#1E293B" stroke="#334155" stroke-width="4"/>
+  
+  <!-- Fan Grilles -->
+  <circle cx="310" cy="190" r="55" fill="#0F172A" stroke="#475569" stroke-width="4"/>
+  <circle cx="310" cy="190" r="15" fill="#38BDF8"/>
+  <circle cx="490" cy="190" r="55" fill="#0F172A" stroke="#475569" stroke-width="4"/>
+  <circle cx="490" cy="190" r="15" fill="#38BDF8"/>
+
+  <!-- Fan Blades -->
+  <line x1="310" y1="140" x2="310" y2="240" stroke="#94A3B8" stroke-width="4"/>
+  <line x1="260" y1="190" x2="360" y2="190" stroke="#94A3B8" stroke-width="4"/>
+  <line x1="490" y1="140" x2="490" y2="240" stroke="#94A3B8" stroke-width="4"/>
+  <line x1="440" y1="190" x2="540" y2="190" stroke="#94A3B8" stroke-width="4"/>
+
+  <!-- Hitachi Brand Header -->
+  <rect x="240" y="270" width="320" height="40" rx="8" fill="#0F172A"/>
+  <text x="400" y="296" fill="#E60012" font-family="Outfit, sans-serif" font-weight="800" font-size="22" text-anchor="middle" letter-spacing="2">HITACHI SET FREE VRF</text>
+
+  <!-- Label Banner -->
+  <rect x="250" y="370" width="300" height="48" rx="24" fill="rgba(255,255,255,0.08)" stroke="rgba(255,255,255,0.2)"/>
+  <text x="400" y="400" fill="#F8FAFC" font-family="Outfit, sans-serif" font-weight="600" font-size="18" text-anchor="middle">Hitachi Commercial VRF System</text>
+</svg>
