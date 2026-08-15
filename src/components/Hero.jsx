@@ -10,23 +10,24 @@ export default function Hero({ onOpenConsultation }) {
     const canvas = canvasRef.current;
     if (!canvas) return;
     const ctx = canvas.getContext('2d');
+    if (!ctx) return;
 
     let animationFrameId;
-    let width = (canvas.width = canvas.offsetWidth);
-    let height = (canvas.height = canvas.offsetHeight);
+    let width = (canvas.width = canvas.offsetWidth || window.innerWidth || 800);
+    let height = (canvas.height = canvas.offsetHeight || 600);
 
     const handleResize = () => {
       if (!canvas) return;
-      width = canvas.width = canvas.offsetWidth;
-      height = canvas.height = canvas.offsetHeight;
+      width = canvas.width = canvas.offsetWidth || window.innerWidth || 800;
+      height = canvas.height = canvas.offsetHeight || 600;
     };
     window.addEventListener('resize', handleResize);
 
     // Particles simulating airflow streams & thermal dynamics
     const particleCount = 45;
     const particles = Array.from({ length: particleCount }, () => ({
-      x: Math.random() * width,
-      y: Math.random() * height,
+      x: Math.random() * (width || 800),
+      y: Math.random() * (height || 600),
       length: Math.random() * 80 + 40,
       speed: Math.random() * 1.5 + 0.5,
       alpha: Math.random() * 0.4 + 0.1,
@@ -35,42 +36,49 @@ export default function Hero({ onOpenConsultation }) {
     }));
 
     const render = () => {
-      ctx.clearRect(0, 0, width, height);
+      try {
+        if (!ctx || width <= 0 || height <= 0) return;
+        ctx.clearRect(0, 0, width, height);
 
-      // Render subtle blueprint grid line accents
-      ctx.strokeStyle = 'rgba(0, 240, 255, 0.03)';
-      ctx.lineWidth = 1;
+        // Render subtle blueprint grid line accents
+        ctx.strokeStyle = 'rgba(0, 240, 255, 0.03)';
+        ctx.lineWidth = 1;
 
-      // Render flowing air streams
-      particles.forEach((p) => {
-        p.x += p.speed * 1.2;
-        p.y -= Math.sin(p.x * 0.005) * 0.4;
+        // Render flowing air streams
+        particles.forEach((p) => {
+          p.x += p.speed * 1.2;
+          p.y -= Math.sin(p.x * 0.005) * 0.4;
 
-        if (p.x > width + p.length) {
-          p.x = -p.length;
-          p.y = Math.random() * height;
-        }
+          if (p.x > width + p.length) {
+            p.x = -p.length;
+            p.y = Math.random() * height;
+          }
 
-        const gradient = ctx.createLinearGradient(p.x, p.y, p.x - p.length, p.y);
-        gradient.addColorStop(0, `hsla(${p.blueHue}, 100%, 65%, ${p.alpha})`);
-        gradient.addColorStop(1, 'rgba(0, 0, 0, 0)');
+          if (isFinite(p.x) && isFinite(p.y) && isFinite(p.length) && p.length > 0) {
+            const gradient = ctx.createLinearGradient(p.x, p.y, p.x - p.length, p.y);
+            gradient.addColorStop(0, `hsla(${p.blueHue}, 100%, 65%, ${p.alpha})`);
+            gradient.addColorStop(1, 'rgba(0, 0, 0, 0)');
 
-        ctx.beginPath();
-        ctx.strokeStyle = gradient;
-        ctx.lineWidth = p.thickness;
-        ctx.moveTo(p.x, p.y);
-        ctx.lineTo(p.x - p.length, p.y);
-        ctx.stroke();
-      });
+            ctx.beginPath();
+            ctx.strokeStyle = gradient;
+            ctx.lineWidth = p.thickness;
+            ctx.moveTo(p.x, p.y);
+            ctx.lineTo(p.x - p.length, p.y);
+            ctx.stroke();
+          }
+        });
 
-      animationFrameId = requestAnimationFrame(render);
+        animationFrameId = requestAnimationFrame(render);
+      } catch (err) {
+        console.warn('Canvas render caught safely:', err);
+      }
     };
 
     render();
 
     return () => {
       window.removeEventListener('resize', handleResize);
-      cancelAnimationFrame(animationFrameId);
+      if (animationFrameId) cancelAnimationFrame(animationFrameId);
     };
   }, []);
 

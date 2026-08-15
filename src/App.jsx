@@ -15,6 +15,43 @@ import Contact from './components/Contact';
 import Footer from './components/Footer';
 import ConsultationModal from './components/ConsultationModal';
 
+class ErrorBoundary extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = { hasError: false };
+  }
+
+  static getDerivedStateFromError(error) {
+    return { hasError: true };
+  }
+
+  componentDidCatch(error, errorInfo) {
+    console.error('ErrorBoundary caught error:', error, errorInfo);
+  }
+
+  render() {
+    if (this.state.hasError) {
+      return (
+        <div className="min-h-screen bg-[#030712] text-white flex flex-col items-center justify-center p-6 text-center font-sans">
+          <div className="space-y-4">
+            <h1 className="text-3xl font-extrabold text-cyan-400">JP ENGINEERING</h1>
+            <p className="text-slate-300 max-w-md text-sm">
+              The application encountered a display glitch. Please reload to restore precision HVAC interface.
+            </p>
+            <button
+              onClick={() => window.location.reload()}
+              className="px-6 py-3 bg-cyan-400 text-slate-950 font-bold rounded-lg hover:bg-cyan-300 transition-colors uppercase tracking-wider text-xs"
+            >
+              RELOAD PAGE
+            </button>
+          </div>
+        </div>
+      );
+    }
+    return this.props.children;
+  }
+}
+
 export default function App() {
   const [consultationOpen, setConsultationOpen] = useState(false);
   const [selectedCategory, setSelectedCategory] = useState('');
@@ -30,35 +67,37 @@ export default function App() {
   };
 
   return (
-    <div className="min-h-screen bg-[#030712] text-slate-100 selection:bg-cyan-500/30 selection:text-cyan-300 font-sans">
-      {/* Navigation */}
-      <Navbar onOpenConsultation={() => handleOpenConsultation()} />
+    <ErrorBoundary>
+      <div className="min-h-screen bg-[#030712] text-slate-100 selection:bg-cyan-500/30 selection:text-cyan-300 font-sans">
+        {/* Navigation */}
+        <Navbar onOpenConsultation={() => handleOpenConsultation()} />
 
-      {/* Main Page Layout Sections */}
-      <main>
-        <Hero onOpenConsultation={() => handleOpenConsultation('General Hero Consultation')} />
-        <TrustBar />
-        <About onOpenConsultation={() => handleOpenConsultation('About Page Story')} />
-        <Solutions onOpenConsultation={(cat) => handleOpenConsultation(cat)} />
-        <Industries onOpenConsultation={(cat) => handleOpenConsultation(cat)} />
-        <Process onOpenConsultation={(step) => handleOpenConsultation(step)} />
-        <HVACCalculator onOpenConsultation={(calcData) => handleOpenConsultation(calcData)} />
-        <WhyUs />
-        <Reviews />
-        <Projects onOpenConsultation={(proj) => handleOpenConsultation(proj)} />
-        <CTA onOpenConsultation={(source) => handleOpenConsultation(source)} />
-        <Contact defaultSubject={selectedCategory} />
-      </main>
+        {/* Main Page Layout Sections */}
+        <main>
+          <Hero onOpenConsultation={() => handleOpenConsultation('General Hero Consultation')} />
+          <TrustBar />
+          <About onOpenConsultation={() => handleOpenConsultation('About Page Story')} />
+          <Solutions onOpenConsultation={(cat) => handleOpenConsultation(cat)} />
+          <Industries onOpenConsultation={(cat) => handleOpenConsultation(cat)} />
+          <Process onOpenConsultation={(step) => handleOpenConsultation(step)} />
+          <HVACCalculator onOpenConsultation={(calcData) => handleOpenConsultation(calcData)} />
+          <WhyUs />
+          <Reviews />
+          <Projects onOpenConsultation={(proj) => handleOpenConsultation(proj)} />
+          <CTA onOpenConsultation={(source) => handleOpenConsultation(source)} />
+          <Contact defaultSubject={selectedCategory} />
+        </main>
 
-      {/* Footer */}
-      <Footer onOpenConsultation={() => handleOpenConsultation('Footer Quote')} />
+        {/* Footer */}
+        <Footer onOpenConsultation={() => handleOpenConsultation('Footer Quote')} />
 
-      {/* Global Consultation Modal */}
-      <ConsultationModal
-        isOpen={consultationOpen}
-        onClose={handleCloseConsultation}
-        initialCategory={selectedCategory}
-      />
-    </div>
+        {/* Global Consultation Modal */}
+        <ConsultationModal
+          isOpen={consultationOpen}
+          onClose={handleCloseConsultation}
+          initialCategory={selectedCategory}
+        />
+      </div>
+    </ErrorBoundary>
   );
 }
