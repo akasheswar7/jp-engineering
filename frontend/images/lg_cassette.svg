@@ -1,0 +1,41 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" width="100%" height="100%">
+  <defs>
+    <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0F2B48"/>
+      <stop offset="100%" stop-color="#0A192F"/>
+    </linearGradient>
+    <linearGradient id="lgGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#A50034"/>
+      <stop offset="100%" stop-color="#E6004C"/>
+    </linearGradient>
+    <linearGradient id="glowGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#00B4D8" stop-opacity="0.3"/>
+      <stop offset="100%" stop-color="#00B4D8" stop-opacity="0"/>
+    </linearGradient>
+  </defs>
+
+  <rect width="100%" height="100%" fill="url(#bgGrad)"/>
+  <circle cx="400" cy="220" r="180" fill="url(#glowGrad)"/>
+
+  <!-- Cassette AC Body -->
+  <rect x="250" y="140" width="300" height="160" rx="16" fill="#FFFFFF" stroke="#E2E8F0" stroke-width="4"/>
+  <rect x="280" y="170" width="240" height="100" rx="10" fill="#F8FAFC" stroke="#CBD5E1" stroke-width="2"/>
+  
+  <!-- 4-Way Airflow Grille -->
+  <line x1="400" y1="170" x2="400" y2="270" stroke="#94A3B8" stroke-width="3"/>
+  <line x1="280" y1="220" x2="520" y2="220" stroke="#94A3B8" stroke-width="3"/>
+  
+  <!-- Center Core Logo Badge -->
+  <circle cx="400" cy="220" r="24" fill="url(#lgGrad)"/>
+  <text x="400" y="226" fill="#FFFFFF" font-family="Outfit, sans-serif" font-weight="bold" font-size="16" text-anchor="middle">LG</text>
+
+  <!-- Airflow Vectors -->
+  <path d="M 230 190 Q 200 170 170 190" stroke="#38BDF8" stroke-width="4" fill="none" stroke-linecap="round"/>
+  <path d="M 570 190 Q 600 170 630 190" stroke="#38BDF8" stroke-width="4" fill="none" stroke-linecap="round"/>
+  <path d="M 230 250 Q 200 270 170 250" stroke="#38BDF8" stroke-width="4" fill="none" stroke-linecap="round"/>
+  <path d="M 570 250 Q 600 270 630 250" stroke="#38BDF8" stroke-width="4" fill="none" stroke-linecap="round"/>
+
+  <!-- Label Banner -->
+  <rect x="260" y="340" width="280" height="48" rx="24" fill="rgba(255,255,255,0.08)" stroke="rgba(255,255,255,0.2)"/>
+  <text x="400" y="370" fill="#F8FAFC" font-family="Outfit, sans-serif" font-weight="600" font-size="18" text-anchor="middle">LG Inverter Ceiling Cassette</text>
+</svg>

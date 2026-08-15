@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Admin Dashboard | JP ENGINEERING - Customer Enquiries</title>
+  
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body style="background: var(--bg-light);">
+
+  <!-- Top Bar -->
+  <div class="top-bar">
+    <div class="container">
+      <div class="top-info">
+        <div class="top-info-item">
+          <i class="fa-solid fa-lock"></i>
+          <span>JP ENGINEERING Protected Portal</span>
+        </div>
+      </div>
+      <a href="index.html" style="color: var(--accent-cyan); font-weight: 600;">
+        <i class="fa-solid fa-arrow-left"></i> Back to Main Website
+      </a>
+    </div>
+  </div>
+
+  <!-- Main Container -->
+  <main class="container section-padding">
+
+    <!-- Secret Login Section -->
+    <section id="loginSection" style="max-width: 480px; margin: 2rem auto;">
+      <div class="form-wrapper">
+        <div class="text-center" style="margin-bottom: 2rem;">
+          <div class="logo-icon" style="margin: 0 auto 1rem auto;"><i class="fa-solid fa-user-shield"></i></div>
+          <h2 style="font-size: 1.6rem; color: var(--primary-dark);">Admin Authentication</h2>
+          <p style="color: var(--text-muted); font-size: 0.9rem;">Enter secret authorization key to access customer HVAC enquiries.</p>
+        </div>
+
+        <form id="adminLoginForm">
+          <div class="form-group">
+            <label for="adminSecretKey" class="form-label">Admin Secret Key</label>
+            <input type="password" id="adminSecretKey" class="form-control" placeholder="Enter key (e.g. jp_admin_secret_2026)" required>
+          </div>
+          <button type="submit" class="btn btn-primary" style="width: 100%;">
+            <i class="fa-solid fa-right-to-bracket"></i> Login to Dashboard
+          </button>
+        </form>
+      </div>
+    </section>
+
+    <!-- Dashboard Section -->
+    <section id="dashboardSection" style="display: none;">
+      <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 2rem; flex-wrap: wrap; gap: 1rem;">
+        <div>
+          <h1 style="font-size: 2rem; color: var(--primary-dark);">Customer HVAC Enquiries</h1>
+          <p style="color: var(--text-muted);">Manage quotation requests submitted via the website.</p>
+        </div>
+        <button id="adminLogoutBtn" class="btn btn-outline btn-sm">
+          <i class="fa-solid fa-right-from-bracket"></i> Logout Admin
+        </button>
+      </div>
+
+      <!-- Controls & Filters Bar -->
+      <div style="background: #fff; padding: 1.5rem; border-radius: var(--radius-md); border: 1px solid var(--border-light); margin-bottom: 2rem; display: flex; gap: 1.5rem; flex-wrap: wrap; align-items: center; justify-content: space-between;">
+        <div style="display: flex; gap: 1rem; align-items: center; flex-wrap: wrap; flex-grow: 1;">
+          <div style="flex-grow: 1; max-width: 320px;">
+            <input type="text" id="adminSearchInput" class="form-control" placeholder="Search name, email, phone, requirement...">
+          </div>
+          <div>
+            <select id="adminBrandFilter" class="form-control">
+              <option value="All">All Preferred Brands</option>
+              <option value="Daikin">Daikin</option>
+              <option value="LG">LG</option>
+              <option value="Hitachi">Hitachi</option>
+              <option value="Not Sure">Not Sure</option>
+              <option value="Other">Other</option>
+            </select>
+          </div>
+        </div>
+
+        <div>
+          <span style="font-weight: 600; color: var(--primary-dark);">Total Enquiries: <span id="enquiryCount" class="text-gradient">0</span></span>
+        </div>
+      </div>
+
+      <!-- Table Wrapper -->
+      <div class="admin-table-wrapper">
+        <table class="admin-table">
+          <thead>
+            <tr>
+              <th>Date</th>
+              <th>Customer</th>
+              <th>Contact Details</th>
+              <th>Brand</th>
+              <th>Requirement</th>
+              <th>Message</th>
+              <th>Action</th>
+            </tr>
+          </thead>
+          <tbody id="enquiryTableBody">
+            <tr>
+              <td colspan="7" class="text-center">Loading enquiries...</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+    </section>
+
+  </main>
+
+  <script src="js/admin.js"></script>
+</body>
+</html>

@@ -1,0 +1,39 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" width="100%" height="100%">
+  <defs>
+    <linearGradient id="bgGrad3" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0A192F"/>
+      <stop offset="100%" stop-color="#0F2B48"/>
+    </linearGradient>
+    <linearGradient id="daikinGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#0066B3"/>
+      <stop offset="100%" stop-color="#0084E6"/>
+    </linearGradient>
+  </defs>
+
+  <rect width="100%" height="100%" fill="url(#bgGrad3)"/>
+
+  <!-- Sleek Wall Split AC Unit -->
+  <rect x="200" y="150" width="400" height="150" rx="20" fill="#FFFFFF" stroke="#E2E8F0" stroke-width="4"/>
+  
+  <!-- Sleek Bottom Flap -->
+  <rect x="230" y="260" width="340" height="16" rx="8" fill="#38BDF8"/>
+
+  <!-- Display Indicator Panel -->
+  <circle cx="540" cy="200" r="14" fill="#0066B3"/>
+  <text x="540" y="204" fill="#FFFFFF" font-family="Outfit, sans-serif" font-weight="bold" font-size="10" text-anchor="middle">24°</text>
+
+  <!-- Daikin Logo Text -->
+  <text x="250" y="205" fill="#0066B3" font-family="Outfit, sans-serif" font-weight="900" font-size="24" letter-spacing="3">DAIKIN</text>
+  <text x="250" y="222" fill="#64748B" font-family="Inter, sans-serif" font-weight="600" font-size="12" letter-spacing="1">INVERTER R32</text>
+
+  <!-- Cool Wind Streams -->
+  <path d="M 240 300 Q 220 360 200 400" stroke="url(#daikinGrad)" stroke-width="4" fill="none" stroke-linecap="round" opacity="0.8"/>
+  <path d="M 320 300 Q 310 370 300 410" stroke="url(#daikinGrad)" stroke-width="4" fill="none" stroke-linecap="round" opacity="0.8"/>
+  <path d="M 400 300 Q 400 380 400 420" stroke="url(#daikinGrad)" stroke-width="4" fill="none" stroke-linecap="round" opacity="0.8"/>
+  <path d="M 480 300 Q 490 370 500 410" stroke="url(#daikinGrad)" stroke-width="4" fill="none" stroke-linecap="round" opacity="0.8"/>
+  <path d="M 560 300 Q 580 360 600 400" stroke="url(#daikinGrad)" stroke-width="4" fill="none" stroke-linecap="round" opacity="0.8"/>
+
+  <!-- Label Banner -->
+  <rect x="250" y="420" width="300" height="44" rx="22" fill="rgba(255,255,255,0.08)" stroke="rgba(255,255,255,0.2)"/>
+  <text x="400" y="448" fill="#F8FAFC" font-family="Outfit, sans-serif" font-weight="600" font-size="18" text-anchor="middle">Daikin Inverter Split AC</text>
+</svg>

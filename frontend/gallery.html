@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Photo Gallery | JP ENGINEERING - HVAC Solutions Visakhapatnam</title>
+  <meta name="description" content="Explore JP Engineering's photo gallery featuring Daikin corporate presentations, AC installations, VRF projects, and HVAC site engineering in Visakhapatnam.">
+  
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <!-- Top Bar -->
+  <div class="top-bar">
+    <div class="container">
+      <div class="top-info">
+        <div class="top-info-item">
+          <i class="fa-solid fa-location-dot"></i>
+          <span>Visakhapatnam, Andhra Pradesh</span>
+        </div>
+        <div class="top-info-item">
+          <i class="fa-solid fa-phone"></i>
+          <span>+91 78937 61976</span>
+        </div>
+      </div>
+      <div class="top-brands-badge">
+        <span>Dealing In:</span>
+        <span class="bg-daikin">DAIKIN</span>
+        <span class="bg-lg">LG</span>
+        <span class="bg-hitachi">HITACHI</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- Navbar -->
+  <nav class="navbar" id="navbar">
+    <div class="container">
+      <a href="index.html" class="logo-wrapper">
+        <div class="logo-icon"><i class="fa-solid fa-snowflake"></i></div>
+        <div class="logo-text">
+          <span class="logo-title">JP ENGINEERING</span>
+          <span class="logo-subtitle">HVAC & Cooling Solutions</span>
+        </div>
+      </a>
+
+      <ul class="nav-menu">
+        <li><a href="index.html" class="nav-link">Home</a></li>
+        <li><a href="about.html" class="nav-link">About Us</a></li>
+        <li><a href="industries.html" class="nav-link">Industries</a></li>
+        <li><a href="gallery.html" class="nav-link active">Gallery</a></li>
+        <li><a href="quote.html" class="nav-quote-btn">Get a Quote <i class="fa-solid fa-arrow-right"></i></a></li>
+      </ul>
+
+      <button class="mobile-toggle" aria-label="Toggle navigation menu">
+        <i class="fa-solid fa-bars"></i>
+      </button>
+    </div>
+  </nav>
+
+  <!-- Page Banner -->
+  <section class="hero" style="padding: 4rem 0 5rem 0;">
+    <div class="hero-overlay"></div>
+    <div class="container text-center" style="position: relative; z-index: 2;">
+      <span class="section-tag" style="background: rgba(255,255,255,0.1); color: var(--accent-cyan);">Visual Showcase</span>
+      <h1 class="hero-title" style="margin-bottom: 0.8rem;">Photo Gallery</h1>
+      <p class="hero-subtitle" style="margin: 0 auto; max-width: 700px;">Explore photos of our corporate brand events, Daikin certifications, commercial VRF installations, and engineering execution.</p>
+    </div>
+  </section>
+
+  <!-- Gallery Section -->
+  <section class="section-padding" id="gallery-section">
+    <div class="container">
+
+      <!-- Gallery Filters -->
+      <div class="filter-container">
+        <button class="filter-btn project-filter-btn active" data-filter="all">All Photos</button>
+        <button class="filter-btn project-filter-btn" data-filter="events">Events & Certifications</button>
+        <button class="filter-btn project-filter-btn" data-filter="commercial">Commercial Installations</button>
+        <button class="filter-btn project-filter-btn" data-filter="residential">Residential AC Setup</button>
+      </div>
+
+      <!-- Gallery Grid -->
+      <div class="projects-grid" id="galleryGrid">
+
+        <!-- Photo 1: User's Daikin Event Image -->
+        <div class="project-card" data-category="events">
+          <div class="project-image-box" style="height: 280px; cursor: pointer;" onclick="openLightbox('images/gallery_daikin_event.png', 'Daikin Solutions Presentation & Certification Event')">
+            <img src="images/gallery_daikin_event.png" alt="Daikin Solutions Presentation Event" style="object-fit: cover;">
+            <span class="project-category-badge bg-daikin" style="background: rgba(0, 102, 179, 0.9);">DAIKIN EVENT</span>
+          </div>
+          <div class="project-details">
+            <h3 class="project-title">Daikin Solutions Presentation & Certification</h3>
+            <p class="project-location"><i class="fa-solid fa-award" style="color: var(--accent-cyan);"></i> Corporate Brand Event</p>
+            <p class="project-desc">JP Engineering team receiving Daikin air-conditioning solutions certification during official corporate presentation.</p>
+          </div>
+        </div>
+
+        <!-- Photo 2: Hitachi VRF -->
+        <div class="project-card" data-category="commercial">
+          <div class="project-image-box" style="height: 280px; cursor: pointer;" onclick="openLightbox('images/hitachi_vrf.svg', 'VRV Multi-Zone Commercial Installation')">
+            <img src="images/hitachi_vrf.svg" alt="VRV Commercial Installation">
+            <span class="project-category-badge bg-hitachi" style="background: rgba(230, 0, 18, 0.9);">HITACHI VRF</span>
+          </div>
+          <div class="project-details">
+            <h3 class="project-title">VRV Multi-Zone Commercial Installation</h3>
+            <p class="project-location"><i class="fa-solid fa-building" style="color: var(--accent-cyan);"></i> Visakhapatnam Tech Park</p>
+            <p class="project-desc">Precision piping and outdoor unit setup for multi-floor commercial office building.</p>
+          </div>
+        </div>
+
+        <!-- Photo 3: LG Cassette AC -->
+        <div class="project-card" data-category="commercial">
+          <div class="project-image-box" style="height: 280px; cursor: pointer;" onclick="openLightbox('images/lg_cassette.svg', 'LG Inverter Ceiling Cassette Assembly')">
+            <img src="images/lg_cassette.svg" alt="LG Cassette AC Assembly">
+            <span class="project-category-badge bg-lg" style="background: rgba(165, 0, 52, 0.9);">LG CASSETTE</span>
+          </div>
+          <div class="project-details">
+            <h3 class="project-title">LG Inverter Ceiling Cassette Assembly</h3>
+            <p class="project-location"><i class="fa-solid fa-store" style="color: var(--accent-cyan);"></i> Retail Showroom Project</p>
+            <p class="project-desc">Flush-mounted 4-way cassette system engineered for 360-degree uniform airflow.</p>
+          </div>
+        </div>
+
+        <!-- Photo 4: Daikin Split -->
+        <div class="project-card" data-category="residential">
+          <div class="project-image-box" style="height: 280px; cursor: pointer;" onclick="openLightbox('images/daikin_split.svg', 'Daikin Inverter Split AC Residential Assembly')">
+            <img src="images/daikin_split.svg" alt="Daikin Split AC Setup">
+            <span class="project-category-badge bg-daikin" style="background: rgba(0, 102, 179, 0.9);">DAIKIN SPLIT</span>
+          </div>
+          <div class="project-details">
+            <h3 class="project-title">Daikin Inverter Split AC Installation</h3>
+            <p class="project-location"><i class="fa-solid fa-house" style="color: var(--accent-cyan);"></i> Luxury Villa Setup</p>
+            <p class="project-desc">Whisper-quiet Coanda airflow split AC installation in master bedroom.</p>
+          </div>
+        </div>
+
+        <!-- Photo 5: HVAC Site Engineering -->
+        <div class="project-card" data-category="events">
+          <div class="project-image-box" style="height: 280px; cursor: pointer;" onclick="openLightbox('images/hvac_inspection.svg', 'HVAC Site Engineering & Inspection')">
+            <img src="images/hvac_inspection.svg" alt="HVAC Site Inspection">
+            <span class="project-category-badge" style="background: rgba(10, 25, 47, 0.9);">ENGINEERING</span>
+          </div>
+          <div class="project-details">
+            <h3 class="project-title">HVAC Site Engineering Inspection</h3>
+            <p class="project-location"><i class="fa-solid fa-clipboard-check" style="color: var(--accent-cyan);"></i> Quality Audit</p>
+            <p class="project-desc">Technical engineers assessing airflow balance and duct pressure during commissioning.</p>
+          </div>
+        </div>
+
+        <!-- Photo 6: Commercial VRF Module -->
+        <div class="project-card" data-category="commercial">
+          <div class="project-image-box" style="height: 280px; cursor: pointer;" onclick="openLightbox('images/hitachi_vrf.svg', 'Commercial VRF Chiller Outdoor Setup')">
+            <img src="images/hitachi_vrf.svg" alt="VRF Outdoor Module">
+            <span class="project-category-badge bg-hitachi" style="background: rgba(230, 0, 18, 0.9);">HITACHI VRF</span>
+          </div>
+          <div class="project-details">
+            <h3 class="project-title">Commercial VRF Chiller Outdoor Module</h3>
+            <p class="project-location"><i class="fa-solid fa-industry" style="color: var(--accent-cyan);"></i> Corporate Rooftop</p>
+            <p class="project-desc">Heavy-duty outdoor VRF modules providing cooling for 50,000 sq ft office facility.</p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Lightbox Modal Component -->
+  <div id="lightboxModal" style="display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(7, 15, 30, 0.92); backdrop-filter: blur(12px); z-index: 3000; align-items: center; justify-content: center; padding: 2rem;">
+    <div style="max-width: 900px; width: 100%; background: var(--bg-dark); border-radius: var(--radius-lg); overflow: hidden; border: 1px solid rgba(255,255,255,0.15); box-shadow: var(--shadow-glow); position: relative;">
+      <button onclick="closeLightbox()" style="position: absolute; top: 1rem; right: 1rem; background: rgba(255,255,255,0.2); color: #fff; border: none; width: 40px; height: 40px; border-radius: 50%; cursor: pointer; font-size: 1.2rem; display: flex; align-items: center; justify-content: center; z-index: 10;">
+        <i class="fa-solid fa-xmark"></i>
+      </button>
+      <img id="lightboxImg" src="" alt="" style="width: 100%; max-height: 70vh; object-fit: contain; background: #000;">
+      <div style="padding: 1.5rem; color: #fff; text-align: center;">
+        <h3 id="lightboxCaption" style="color: var(--accent-cyan); font-size: 1.3rem;"></h3>
+      </div>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <div class="logo-wrapper">
+            <div class="logo-icon"><i class="fa-solid fa-snowflake"></i></div>
+            <div class="logo-text">
+              <span class="logo-title" style="color: #fff;">JP ENGINEERING</span>
+              <span class="logo-subtitle">HVAC & Cooling Solutions</span>
+            </div>
+          </div>
+          <p>A trusted air-conditioning and HVAC solutions provider serving residential, commercial, and industrial customers in Visakhapatnam with quality products, professional installation, and dependable service.</p>
+        </div>
+
+        <div>
+          <h4 class="footer-title">Quick Links</h4>
+          <ul class="footer-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About Us</a></li>
+            <li><a href="industries.html">Industries</a></li>
+            <li><a href="gallery.html">Gallery</a></li>
+            <li><a href="quote.html">Get a Quote</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h4 class="footer-title">Brands We Deal In</h4>
+          <ul class="footer-links">
+            <li><a href="quote.html?brand=Daikin">Daikin AC Solutions</a></li>
+            <li><a href="quote.html?brand=LG">LG AC Solutions</a></li>
+            <li><a href="quote.html?brand=Hitachi">Hitachi AC Solutions</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h4 class="footer-title">Contact Information</h4>
+          <p style="font-size: 0.9rem; margin-bottom: 0.8rem;"><i class="fa-solid fa-location-dot" style="color: var(--accent-cyan);"></i> D.NO. 49, 53-18/1/1, Opp. Ratnam Towers, Visakhapatnam, Andhra Pradesh</p>
+          <p style="font-size: 0.9rem; margin-bottom: 0.8rem;"><i class="fa-solid fa-phone" style="color: var(--accent-cyan);"></i> Phone: +91 78937 61976</p>
+          <p style="font-size: 0.9rem; margin-bottom: 0.8rem;"><i class="fa-solid fa-envelope" style="color: var(--accent-cyan);"></i> Email: [Editable Placeholder: info@jpengineering.in]</p>
+          <p style="font-size: 0.9rem;"><i class="fa-solid fa-user-shield" style="color: var(--accent-cyan);"></i> <a href="admin.html" style="color: var(--text-light);">Admin Portal Login</a></p>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <p>&copy; <span id="current-year"></span> JP ENGINEERING. All rights reserved. Air Conditioning & HVAC Solutions Provider.</p>
+        <p>Visakhapatnam, Andhra Pradesh</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+  <script src="js/filtering.js"></script>
+  <script>
+    function openLightbox(src, caption) {
+      const modal = document.getElementById('lightboxModal');
+      const img = document.getElementById('lightboxImg');
+      const cap = document.getElementById('lightboxCaption');
+      if (modal && img && cap) {
+        img.src = src;
+        cap.textContent = caption;
+        modal.style.display = 'flex';
+      }
+    }
+    function closeLightbox() {
+      const modal = document.getElementById('lightboxModal');
+      if (modal) modal.style.display = 'none';
+    }
+  </script>
+</body>
+</html>
