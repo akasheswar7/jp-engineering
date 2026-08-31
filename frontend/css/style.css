@@ -230,11 +230,7 @@ img {
 }
 
 .logo-subtitle {
-  font-size: 0.7rem;
-  font-weight: 600;
-  color: var(--accent-blue);
-  text-transform: uppercase;
-  letter-spacing: 1px;
+  display: none;
 }
 
 .nav-menu {
