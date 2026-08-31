@@ -1439,3 +1439,59 @@ textarea.form-control {
   }
 }
 
+/* Responsive Grid & Mobile Optimization */
+.about-hero-grid {
+  display: grid;
+  grid-template-columns: 1.2fr 0.8fr;
+  align-items: start;
+  gap: 3rem;
+}
+
+.about-sticky-card {
+  position: sticky;
+  top: 100px;
+}
+
+@media (max-width: 992px) {
+  .about-hero-grid {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+  .about-sticky-card {
+    position: static;
+  }
+}
+
+@media (max-width: 576px) {
+  .logo-wrapper {
+    gap: 0.5rem;
+    max-width: 72vw;
+  }
+
+  .logo-title {
+    font-size: clamp(0.8rem, 3.6vw, 1rem);
+    line-height: 1.25;
+  }
+
+  .founder-message-card {
+    padding: 1.25rem 1rem !important;
+  }
+
+  .founder-message-card p {
+    font-size: 0.95rem !important;
+    line-height: 1.65 !important;
+  }
+
+  .projects-grid {
+    grid-template-columns: 1fr !important;
+  }
+
+  .project-image-box {
+    height: 260px !important;
+  }
+
+  .about-sticky-card img {
+    max-height: 480px !important;
+  }
+}
+
