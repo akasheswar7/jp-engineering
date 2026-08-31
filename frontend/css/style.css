@@ -792,15 +792,17 @@ img {
 }
 
 .project-image-box {
-  height: 240px;
+  height: 320px;
   position: relative;
   overflow: hidden;
+  background: var(--bg-dark);
 }
 
 .project-image-box img {
   width: 100%;
   height: 100%;
-  object-fit: cover;
+  object-fit: contain;
+  background: #0b192e;
 }
 
 .project-category-badge {
