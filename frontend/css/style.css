@@ -1487,11 +1487,56 @@ textarea.form-control {
   }
 
   .project-image-box {
-    height: 260px !important;
+    height: 240px !important;
   }
 
   .about-sticky-card img {
     max-height: 480px !important;
+  }
+
+  .filter-container {
+    gap: 0.5rem;
+    margin-bottom: 2rem;
+  }
+
+  .filter-btn {
+    padding: 0.5rem 1rem;
+    font-size: 0.82rem;
+  }
+}
+
+/* Mobile Application Experience Enhancements */
+@media (max-width: 480px) {
+  * {
+    -webkit-tap-highlight-color: transparent;
+  }
+
+  .project-card {
+    border-radius: var(--radius-md);
+    box-shadow: 0 4px 15px rgba(0,0,0,0.06);
+  }
+
+  .project-image-box {
+    height: 220px !important;
+  }
+
+  .project-title {
+    font-size: 1.15rem !important;
+  }
+
+  #lightboxModal {
+    padding: 0.8rem !important;
+  }
+
+  #lightboxModal button {
+    top: 0.75rem !important;
+    right: 0.75rem !important;
+    width: 44px !important;
+    height: 44px !important;
+  }
+
+  #lightboxImg {
+    max-height: 75vh !important;
   }
 }
 
